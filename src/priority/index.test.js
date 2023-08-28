@@ -11,4 +11,8 @@ describe('Priority', () => {
     const priority = new Priority(existingPriority);
     expect(priority).toBe(existingPriority);
   });
+
+  it('should throw an error if the provided value is not within the supported values', () => {
+    expect(() => new Priority('wrong')).toThrow(new Error('<wrong> is invalid for Priority'));
+  });
 });
