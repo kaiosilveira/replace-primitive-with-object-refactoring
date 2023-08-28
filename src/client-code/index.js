@@ -4,7 +4,7 @@ so it can be unit tested.
 
 export function countHighPriorityAndRushOrders(orders) {
   const highPriorityCount = orders.filter(
-    (o) => "high" === o.priority || "rush" === o.priority
+    (o) => "high" === o.priorityString || "rush" === o.priorityString
   ).length;
 
   return highPriorityCount;
