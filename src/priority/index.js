@@ -12,6 +12,22 @@ export class Priority {
     return this._value;
   }
 
+  equals(other) {
+    return this._value === other._value;
+  }
+
+  _index() {
+    return Priority.legalValues().findIndex(s => s === this._value);
+  }
+
+  lowerThan(other) {
+    return this._index() < other._index();
+  }
+
+  higherThan(other) {
+    return this._index() > other._index();
+  }
+
   static legalValues() {
     return ["low", "normal", "high", "rush"];
   }
